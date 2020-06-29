@@ -1,9 +1,17 @@
-let passwordlength = prompt("enter a lengtth for this");
-console.log(passwordlength);
+    function generate(){
 
-let useUppercase = prompt("do you want to use uppercase")
-console.log(useUppercase)
+    let complexity = document.getElementById("slider").value;
 
-if(useUppercase === 'yes'
-    choices = chioces + uppercaseChars;
-)
+    let values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
+
+    let password = "";
+
+    for(var i=0; i <= complexity; i++){
+        password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+    }
+
+    document.getElementById("display").value = password;
+
+    document.getElementById("lastNums").innerHTML += password + "<br />";
+
+}
